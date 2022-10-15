@@ -10,16 +10,17 @@ int main()
 	MyVector<int> vec1(10, a);
 	MyVector<int> vec2(10, b);
 	while (c) {
-		cout << "当前vector为:vec1=" << vec1 << ", vec2=" << vec2 << endl << "请选择测试操作:" << endl;
+		cout << endl << "当前vector为:vec1=" << vec1 << ", vec2=" << vec2 << endl << "请选择测试操作:";
 		cout << endl << "1. 测试关系运算符==";
-		cout << endl << "2. 获取vec1和vec2的容量";
+		cout << endl << "2. 获取vec1和vec2的维数";
 		cout << endl << "3. 向vec1中添加数据";
 		cout << endl << "4. 向vec2中添加数据";
 		cout << endl << "5. 测试赋值运算符，将vec2赋值给vec1";
-		cout << endl << "6. 修改vec1容量大小";
-		cout << endl << "7. 修改vec2容量大小";
+		cout << endl << "6. 修改vec1维数";
+		cout << endl << "7. 修改vec2维数";
+		cout << endl << "8. 测试越界";
 		cout << endl << "0. 退出";
-		cout << endl << "选择功能 (0~6):";
+		cout << endl << "选择功能 (0~8):";
 		cin >> c;
 		switch (c) {
 		case 1:
@@ -60,6 +61,10 @@ int main()
 			cout << "请输入vec2修改后的大小:";
 			cin >> length;
 			vec2.resize(length);
+			break;
+		case 8:
+			cout << "调用a[length+1]";
+			cout << vec1[11];
 			break;
 		default:
 			break;
