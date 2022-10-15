@@ -8,22 +8,23 @@ using namespace std;
 template <typename T>
 class MyVector{
 public:
-	MyVector():data(nullptr),l(0);
+	MyVector(int ll, const T* v);
 	~MyVector();
 	MyVector(const MyVector& v);
-	MyVector(const T* v);
 
 	void push_back(T dt);
-	int size(void) const { return l; }
+	int size(void) const { return length; }
+	void resize(const int& s);
 
-	friend ostream& operator<<(ostream& out, const MyVector<T>& v);
-	friend istream& operator>>(istream& in, MyVector<T>& v);
-	bool operator== (const MyVector<T>& a);
+	friend ostream& operator<<(ostream& out, const MyVector& v);
+	friend istream& operator>>(istream& in, MyVector& v);
+	MyVector& operator=(const MyVector& v);
+	bool operator== (const MyVector& a);
 	T& operator[] (const int& index) const;
 	
 private:
 	T* data;
-	int l;
+	int length;
 };
 
 #endif // !MYVECTOR_H_
