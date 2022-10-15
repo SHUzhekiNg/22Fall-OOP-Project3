@@ -1,4 +1,4 @@
-#include "myvector.h"
+#include "myvector.cpp"
 int main() 
 {
 	int a[10];
